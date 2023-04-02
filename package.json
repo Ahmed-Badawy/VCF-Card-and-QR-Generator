@@ -1,0 +1,21 @@
+{
+  "name": "VCF-Card-and-QR-Generator",
+  "version": "1.0.0",
+  "repository": "git+https://github.com/Ahmed-Badawy/VCF-Card-and-QR-Generator.git",
+  "author": "Ahmed Badawy <ahmed.badawy.elsaid@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "compile": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json",
+    "parcel": "parcel example/index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "typescript": "5.0.2"
+  },
+  "dependencies": {
+    "parcel": "^2.8.3",
+    "qrcode": "^1.5.1",
+    "uuid-base62": "^0.1.0"
+  }
+}
