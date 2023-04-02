@@ -1,15 +1,21 @@
 
+var isBrowser=new Function("try {return this===window;}catch(e){ return false;}");
+var isNode=new Function("try {return this===global;}catch(e){return false;}");
+
 const getPhoto = function() : photoType {
   return {
       url: '',
       mediaType: '',
       base64: false,
-      attachFromUrl: function(url: string, mediaType: string){
+      attachFromUrl: function(url: string, mediaType: string) {
           this.url = url;
           this.mediaType = mediaType;
           this.base64 = false;
       },
       embedFromFile: function(fileLocation: string) {
+        if(isBrowser) {
+          throw new Error('embedFromFile feature is not allowed in browsers');
+        }
         var fs   = require('fs');
         var path = require('path');
         this.mediaType = path.extname(fileLocation).toUpperCase().replace(/\./g, "");
@@ -43,6 +49,9 @@ function getMajorVersion(version = '3.0') {
 }
 
 export const autoUUID = function (){
+  if(isBrowser) {
+    throw new Error('autoUUID feature is not allowed in browsers');
+  }
 	let uuidBase62 = require('uuid-base62');
 	let uuid = uuidBase62.v4();
 	let originalUuid = uuidBase62.decode(uuid);
@@ -267,6 +276,9 @@ export const generateVCFString = function (vCard : Partial<vcardType>, isQR: boo
 }
 
 export const generateVCFFile = (vCardObj: vcardType, filename = null) => {
+  if(isBrowser) {
+    throw new Error('generateVCFFile feature is not allowed in browsers');
+  }
   const fs = require('fs');
   const formatedString : string = generateVCFString(vCardObj);
   fs.writeFileSync(filename ?? `${vCardObj.formattedName}.vcf`, formatedString, { encoding: 'utf8' });
@@ -274,6 +286,9 @@ export const generateVCFFile = (vCardObj: vcardType, filename = null) => {
 }
 
 export const generateFullVCFQR = (vCardObj : Partial<vcardType>, fileName = null, options = {}) => {
+  if(isBrowser) {
+    throw new Error('generateFullVCFQR feature is not allowed in browsers');
+  }
   const QRCode = require('qrcode');
   const isQR = true;
   const formatedString = generateVCFString(vCardObj, isQR);
@@ -284,6 +299,9 @@ export const generateFullVCFQR = (vCardObj : Partial<vcardType>, fileName = null
 }
 
 export const generateQR = (vCardObj: vcardType, fileName = null, options = {}) => {
+  if(isBrowser) {
+    throw new Error('generateQR feature is not allowed in browsers');
+  }
   const QRvCardObj : Partial<vcardType> = {
     version: vCardObj.version,
     formattedName: vCardObj.formattedName,
