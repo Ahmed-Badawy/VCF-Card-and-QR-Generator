@@ -1,5 +1,5 @@
 {
-  "name": "VCF-Card-and-QR-Generator",
+  "name": "vcf-card-generator",
   "version": "0.0.1",
   "description": "A minimal approach library to generate frontend & backend vcf cards with works in browsers+nodejs",
   "main": "lib/es5/index.js",
@@ -7,7 +7,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ahmed-Badawy/VCF-Card-and-QR-Generator.git"
+    "url": "git+https://github.com/Ahmed-Badawy/vcf-card-generator.git"
   },
   "files": [
     "lib",
@@ -34,9 +34,9 @@
   "author": "Ahmed Badawy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Ahmed-Badawy/VCF-Card-and-QR-Generator/issues"
+    "url": "https://github.com/Ahmed-Badawy/vcf-card-generator/issues"
   },
-  "homepage": "https://github.com/Ahmed-Badawy/VCF-Card-and-QR-Generator#readme",
+  "homepage": "https://github.com/Ahmed-Badawy/vcf-card-generator#readme",
   "directories": {
     "lib": "lib"
   },

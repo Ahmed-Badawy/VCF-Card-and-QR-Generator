@@ -1,7 +1,7 @@
 {
-  "name": "VCF-Card-and-QR-Generator",
+  "name": "vcf-card-generator",
   "version": "1.0.0",
-  "repository": "git+https://github.com/Ahmed-Badawy/VCF-Card-and-QR-Generator.git",
+  "repository": "git+https://github.com/Ahmed-Badawy/vcf-card-generator.git",
   "author": "Ahmed Badawy <ahmed.badawy.elsaid@gmail.com>",
   "license": "MIT",
   "scripts": {
